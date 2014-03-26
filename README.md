@@ -32,3 +32,14 @@ Rename
 			console.log(error);
 		}
 	});
+
+Delete Chain/s
+---
+	iptables.deleteChain({
+		table: 'filter', // default: filter
+		chain: 'chain-name'
+	}, function (error) {
+		if (error) {
+			console.log(error);
+		}
+	});
