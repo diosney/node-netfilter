@@ -22,7 +22,7 @@ New
 	});
 
 Rename
----
+------
 	iptables.rename({
 		table: 'filter', // default: filter
 		old_name: 'old-chain-name',
@@ -34,10 +34,22 @@ Rename
 	});
 
 Delete Chain/s
----
+--------------
 	iptables.deleteChain({
 		table: 'filter', // default: filter
 		chain: 'chain-name'
+	}, function (error) {
+		if (error) {
+			console.log(error);
+		}
+	});
+
+Zero
+----
+	iptables.zero({
+		table: 'filter', // default: filter
+		chain: 'chain-name',
+		rulenum: 4
 	}, function (error) {
 		if (error) {
 			console.log(error);
