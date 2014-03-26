@@ -35,6 +35,12 @@ Rename
 
 Delete Chain/s
 --------------
+	iptables.deleteChain(function (error) {
+        if (error) {
+            console.log(error);
+        }
+    });
+
 	iptables.deleteChain({
 		table: 'filter', // default: filter
 		chain: 'chain-name'
@@ -46,6 +52,12 @@ Delete Chain/s
 
 Zero
 ----
+	iptables.zero(function (error) {
+        if (error) {
+            console.log(error);
+        }
+    });
+
 	iptables.zero({
 		table: 'filter', // default: filter
 		chain: 'chain-name',
@@ -58,6 +70,12 @@ Zero
 
 Flush
 -----
+	iptables.flush(function (error) {
+		if (error) {
+			console.log(error);
+		}
+	});
+
 	iptables.flush({
 		table: 'filter', // default: filter
 		chain: 'chain-name'
