@@ -1,6 +1,6 @@
 {
 	"name"        : "netfilter",
-	"version"     : "0.0.0",
+	"version"     : "0.1.0",
 	"description" : "Packet filtering framework. Wrapper to provide netfilter capabilities from Node.js",
 	"main"        : "index.js",
 	"keywords"    : [

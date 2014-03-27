@@ -1,7 +1,60 @@
-http://ipset.netfilter.org/iptables.man.html
+# node-netfilter
 
-Error codes
------------
+Packet filtering framework.
+
+Wrapper around native **netfilter** suite to port its functionality to be used in Node.js space.
+
+## Installation
+
+	$ npm install netfilter
+
+## Supported functionality
+
+- `iptables`    Administration tool for IPv4 packet filtering and NAT (among other capabilities).
+- `ip6tables`   IPv6 packet filter administration (among other capabilities).
+
+## Requirements
+
+Basically the only system requirement is that the **netfilter** framework to be present in your system, which is almost
+sure is installed by default in Linux based OSes.
+
+Other requirement is about permission levels. To properly execute the provided methods the application that uses the
+module must have the proper `sudo` privileges.
+
+## Issues
+
+The source is available for download from [GitHub](https://github.com/diosney/node-netfilter)
+and there is a [issue tracker](https://github.com/diosney/node-netfilter/issues) so you can report bugs there.
+
+## Usage
+
+The package is a collection of utilities that `netfilter` provides, such as `iptables` and `ip6tables`, among others.
+You can get access to such utilities by issuing:
+
+	var iptables = require('netfilter').iptables;
+
+Besides, as a general rule of thumb, all the parameters identifiers are the same that `netfilter` provides, so you
+can easily use the module with basic knowledge.
+
+### iptables / ip6tables - IPv{4|6} packet filter administration
+
+	var iptables = require('netfilter').iptables;
+
+#### `iptables` **official manual**: [http://ipset.netfilter.org/iptables.man.html](http://ipset.netfilter.org/iptables.man.html)
+
+You can switch between the IPv4 and the IPv6 versions of the command by adding/removing the `ipv6` flag in the passed
+in options:
+
+	iptables.flush({
+		ipv6: true
+	}, function (error) {
+		if (error) {
+			console.log(error);
+		}
+	});
+
+#### Error codes
+
 The wrapper error codes matches (unsurprisingly) the same as iptables. They are:
 
 - 0 - Correct functioning (so its an exit code, not an error).
@@ -9,8 +62,8 @@ The wrapper error codes matches (unsurprisingly) the same as iptables. They are:
 - 2 - Caused by invalid or abused command line parameters.
 
 
-Policy
-------
+#### Policy
+
 	iptables.policy({
 		table: 'filter', // default: filter
 		chain: 'FORWARD',
@@ -21,8 +74,8 @@ Policy
 		}
 	});
 
-New
----
+#### New
+
 	iptables.new({
 		table: 'filter', // default: filter
 		chain: 'new-user-chain'
@@ -32,8 +85,8 @@ New
 		}
 	});
 
-Rename
-------
+#### Rename
+
 	iptables.rename({
 		table: 'filter', // default: filter
 		old_name: 'old-chain-name',
@@ -44,8 +97,8 @@ Rename
 		}
 	});
 
-Delete Chain/s
---------------
+#### Delete Chain/s
+
 	iptables.deleteChain(function (error) {
 		if (error) {
 			console.log(error);
@@ -61,8 +114,8 @@ Delete Chain/s
 		}
 	});
 
-Zero
-----
+#### Zero
+
 	iptables.zero(function (error) {
 		if (error) {
 			console.log(error);
@@ -79,8 +132,8 @@ Zero
 		}
 	});
 
-Flush
------
+#### Flush
+
 	iptables.flush(function (error) {
 		if (error) {
 			console.log(error);
@@ -96,8 +149,8 @@ Flush
 		}
 	});
 
-Append
-------
+#### Append
+
 	iptables.append({
 		table: 'filter', // default: filter
 		chain: 'chain-name',
@@ -130,8 +183,8 @@ Append
 		}
 	});
 
-Delete
-------
+#### Delete
+
 	iptables.delete({
 		table:   'filter', // default: filter
 		chain:   'chain-name',
@@ -174,8 +227,8 @@ Delete
 		}
 	});
 
-Insert & Replace
-----------------
+#### Insert & Replace
+
 	iptables.replace({
 		table:	  'filter', // default: filter
 		chain:	  'chain-name',
@@ -213,7 +266,7 @@ Insert & Replace
 
 ### 0.1.0
 
-- Added initial `iptables` & `ip6tables` support.
+- Added `iptables` & `ip6tables` support.
 
 ## License
 
