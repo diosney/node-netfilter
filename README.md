@@ -47,10 +47,10 @@ Rename
 Delete Chain/s
 --------------
 	iptables.deleteChain(function (error) {
-        if (error) {
-            console.log(error);
-        }
-    });
+		if (error) {
+			console.log(error);
+		}
+	});
 
 	iptables.deleteChain({
 		table: 'filter', // default: filter
@@ -64,10 +64,10 @@ Delete Chain/s
 Zero
 ----
 	iptables.zero(function (error) {
-        if (error) {
-            console.log(error);
-        }
-    });
+		if (error) {
+			console.log(error);
+		}
+	});
 
 	iptables.zero({
 		table: 'filter', // default: filter
@@ -102,9 +102,9 @@ Append
 		table: 'filter', // default: filter
 		chain: 'chain-name',
 
-		protocol:        'tcp',
-		source:          '10.10.10.0/24',
-		destination:     '11.11.11.0/24',
+		protocol:		'tcp',
+		source:		  '10.10.10.0/24',
+		destination:	 '11.11.11.0/24',
 		'in-interface':  'eth0',
 		'out-interface': 'eth1',
 
@@ -143,71 +143,71 @@ Delete
 	});
 
 	iptables.delete({
-        table: 'filter', // default: filter
-        chain: 'chain-name',
+		table: 'filter', // default: filter
+		chain: 'chain-name',
 
-        protocol:        'tcp',
-        source:          '10.10.10.0/24',
-        destination:     '11.11.11.0/24',
-        'in-interface':  'eth0',
-        'out-interface': 'eth1',
+		protocol:		'tcp',
+		source:		  '10.10.10.0/24',
+		destination:	 '11.11.11.0/24',
+		'in-interface':  'eth0',
+		'out-interface': 'eth1',
 
-        matches: {
-            addrtype:{
-                'src-type': '!BLACKHOLE'
-            },
+		matches: {
+			addrtype:{
+				'src-type': '!BLACKHOLE'
+			},
 
-            cluster: {
-                'cluster-total-nodes': 2,
-                'cluster-local-node':  1,
-                'cluster-hash-seed':   '0xdeadbeef'
-            }
-        },
+			cluster: {
+				'cluster-total-nodes': 2,
+				'cluster-local-node':  1,
+				'cluster-hash-seed':   '0xdeadbeef'
+			}
+		},
 
-        jump: 'AUDIT',
-        target_options: {
-            type: 'drop'
-        }
-    }, function (error) {
-        if (error) {
-            console.log(error);
-        }
-    });
+		jump: 'AUDIT',
+		target_options: {
+			type: 'drop'
+		}
+	}, function (error) {
+		if (error) {
+			console.log(error);
+		}
+	});
 
 Insert & Replace
 ----------------
 	iptables.replace({
-        table:      'filter', // default: filter
-        chain:      'chain-name',
-        rulenum:    4,
+		table:	  'filter', // default: filter
+		chain:	  'chain-name',
+		rulenum:	4,
 
-        protocol:        'tcp',
-        source:          '10.10.10.0/24',
-        destination:     '11.11.11.0/24',
-        'in-interface':  'eth0',
-        'out-interface': 'eth1',
+		protocol:		'tcp',
+		source:		  '10.10.10.0/24',
+		destination:	 '11.11.11.0/24',
+		'in-interface':  'eth0',
+		'out-interface': 'eth1',
 
-        matches: {
-            addrtype:{
-                'src-type': '!BLACKHOLE'
-            },
+		matches: {
+			addrtype:{
+				'src-type': '!BLACKHOLE'
+			},
 
-            cluster: {
-                'cluster-total-nodes': 2,
-                'cluster-local-node':  1,
-                'cluster-hash-seed':   '0xdeadbeef'
-            }
-        },
+			cluster: {
+				'cluster-total-nodes': 2,
+				'cluster-local-node':  1,
+				'cluster-hash-seed':   '0xdeadbeef'
+			}
+		},
 
-        jump: 'AUDIT',
-        target_options: {
-            type: 'drop'
-        }
-    }, function (error) {
-        if (error) {
-            console.log(error);
-        }
-    });
+		jump: 'AUDIT',
+		target_options: {
+			type: 'drop'
+		}
+	}, function (error) {
+		if (error) {
+			console.log(error);
+		}
+	});
 
 ## Release notes
 
