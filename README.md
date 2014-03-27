@@ -1,3 +1,12 @@
+Error codes
+-----------
+The wrapper error codes matches (unsurprisingly) the same as iptables. They are:
+
+- 0 - Correct functioning (so its an exit code, not an error).
+- 1 - Other errors.
+- 2 - Caused by invalid or abused command line parameters.
+
+
 Policy
 ------
 	iptables.policy({
@@ -79,6 +88,42 @@ Flush
 	iptables.flush({
 		table: 'filter', // default: filter
 		chain: 'chain-name'
+	}, function (error) {
+		if (error) {
+			console.log(error);
+		}
+	});
+
+Append
+------
+	iptables.append({
+		table: 'filter', // default: filter
+		chain: 'chain-name',
+
+		// rule_spec
+		protocol:        'tcp',
+		source:          '10.10.10.0/24',
+		destination:     '11.11.11.0/24',
+		'in-interface':  'eth0',
+		'out-interface': 'eth1',
+
+		matches: {
+			addrtype:{
+				'src-type': '!BLACKHOLE'
+			},
+
+			cluster: {
+				'cluster-total-nodes': 2,
+				'cluster-local-node':  1,
+				'cluster-hash-seed':   '0xdeadbeef'
+			}
+		},
+
+		jump: 'AUDIT',
+
+		target_options: {
+			type: 'drop'
+		}
 	}, function (error) {
 		if (error) {
 			console.log(error);
