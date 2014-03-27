@@ -1,3 +1,5 @@
+http://ipset.netfilter.org/iptables.man.html
+
 Error codes
 -----------
 The wrapper error codes matches (unsurprisingly) the same as iptables. They are:
@@ -143,6 +145,41 @@ Delete
 	iptables.delete({
         table: 'filter', // default: filter
         chain: 'chain-name',
+
+        protocol:        'tcp',
+        source:          '10.10.10.0/24',
+        destination:     '11.11.11.0/24',
+        'in-interface':  'eth0',
+        'out-interface': 'eth1',
+
+        matches: {
+            addrtype:{
+                'src-type': '!BLACKHOLE'
+            },
+
+            cluster: {
+                'cluster-total-nodes': 2,
+                'cluster-local-node':  1,
+                'cluster-hash-seed':   '0xdeadbeef'
+            }
+        },
+
+        jump: 'AUDIT',
+        target_options: {
+            type: 'drop'
+        }
+    }, function (error) {
+        if (error) {
+            console.log(error);
+        }
+    });
+
+Insert
+------
+	iptables.insert({
+        table:      'filter', // default: filter
+        chain:      'chain-name',
+        rulenum:    4,
 
         protocol:        'tcp',
         source:          '10.10.10.0/24',
