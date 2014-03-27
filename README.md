@@ -174,9 +174,9 @@ Delete
         }
     });
 
-Insert
-------
-	iptables.insert({
+Insert & Replace
+----------------
+	iptables.replace({
         table:      'filter', // default: filter
         chain:      'chain-name',
         rulenum:    4,
