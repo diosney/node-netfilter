@@ -262,12 +262,6 @@ The wrapper error codes matches (unsurprisingly) the same as iptables. They are:
 		}
 	});
 
-## Release notes
-
-### 0.1.0
-
-- Added `iptables` & `ip6tables` support.
-
 ## License
 
 The MIT License (MIT)
