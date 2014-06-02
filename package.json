@@ -1,6 +1,6 @@
 {
   "name"        : "netfilter",
-  "version"     : "0.1.0",
+  "version"     : "0.2.0",
   "description" : "Packet filtering framework. Wrapper to provide netfilter capabilities from Node.js",
   "main"        : "index.js",
   "keywords"    : [
@@ -23,7 +23,9 @@
     "masquerading",
     "policy",
     "mangle",
-    "mangling"
+    "mangling",
+    "alias",
+    "set"
   ],
   "dependencies": {
     "async": "*"
