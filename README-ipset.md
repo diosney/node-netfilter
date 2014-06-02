@@ -8,9 +8,8 @@
 
 	ipset.create({
 		setname:  'foo',
-		typename: 'bitmap:ip',
-
-		'create-options': {
+		type   :  'bitmap:ip',
+		create_options: {
 			range:  '192.168.0.0/16'
 		}
 	}, function (error) {
@@ -25,12 +24,7 @@
 
 	ipset.add({
 		setname:  'foo',
-
-		'add-entry':  '192.168.1/24'
-
-		'add-options': {
-			range:  '192.168.0.0/16'
-		}
+		entry  :  '192.168.1/24'
 	}, function (error) {
 		if (error) {
 			console.log(error);
@@ -45,5 +39,93 @@
 		}
 		else {
 			console.log(version);
+		}
+	});
+
+#### Del
+
+	ipset.del({
+		setname:  'foo',
+		entry   : '192.168.1/24'
+	}, function (error) {
+		if (error) {
+			console.log(error);
+		}
+	});
+
+#### Test
+
+	ipset.test({
+		setname:  'foo',
+		entry  :  '192.168.1.1'
+	}, function (error, code) {
+		if (error) {
+			// Is not in the set.
+			console.log(error);
+		}
+		else if (code == 0) {
+			// Is in the set.
+		}
+	});
+
+#### Destroy
+
+Destroy all ipsets.
+
+	ipset.destroy(function (error, code) {
+		if (error) {
+			console.log(error);
+		}
+	});
+
+Destroy ipset with name `foo`.
+
+	ipset.destroy({
+		setname:  'foo'
+	}, function (error, code) {
+		if (error) {
+			console.log(error);
+		}
+	});
+
+#### Flush
+
+Flush all ipsets.
+
+	ipset.flush(function (error, code) {
+		if (error) {
+			console.log(error);
+		}
+	});
+
+Flush ipset with name `foo`.
+
+	ipset.flush({
+		setname:  'foo'
+	}, function (error, code) {
+		if (error) {
+			console.log(error);
+		}
+	});
+
+#### Rename
+
+	ipset.rename({
+		'from'  :  'foo',
+		'to'    :  'foo2'
+	}, function (error, code) {
+		if (error) {
+			console.log(error);
+		}
+	});
+
+#### Swap
+
+	ipset.swap({
+		'from'  :  'foo',
+		'to'    :  'foo2'
+	}, function (error, code) {
+		if (error) {
+			console.log(error);
 		}
 	});
