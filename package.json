@@ -1,47 +1,47 @@
 {
-	"name"        : "netfilter",
-	"version"     : "0.1.0",
-	"description" : "Packet filtering framework. Wrapper to provide netfilter capabilities from Node.js",
-	"main"        : "index.js",
-	"keywords"    : [
-		"stateless",
-		"stateful",
-		"packet",
-		"filter",
-		"filtering",
-		"network address translation",
-		"nat",
-		"napt",
-		"pat",
-		"network address translation",
-		"port address translation",
-		"iptables",
-		"ipset",
-		"conntrack",
-		"firewall",
-		"masquerade",
-		"masquerading",
-		"policy",
-		"mangle",
-		"mangling"
-	],
-	"dependencies": {
-		"async": "*"
-	},
-	"engines"     : {
-		"node": ">=0.8.0"
-	},
-	"homepage"    : "https://github.com/diosney/node-netfilter",
-	"bugs"        : {
-		"url": "https://github.com/diosney/node-netfilter/issues"
-	},
-	"author"      : {
-		"name" : "Diosney Sarmiento",
-		"email": "diosney.s@gmail.com"
-	},
-	"license"     : "MIT",
-	"repository"  : {
-		"type": "git",
-		"url" : "https://github.com/diosney/node-netfilter.git"
-	}
+  "name"        : "netfilter",
+  "version"     : "0.1.0",
+  "description" : "Packet filtering framework. Wrapper to provide netfilter capabilities from Node.js",
+  "main"        : "index.js",
+  "keywords"    : [
+    "stateless",
+    "stateful",
+    "packet",
+    "filter",
+    "filtering",
+    "network address translation",
+    "nat",
+    "napt",
+    "pat",
+    "network address translation",
+    "port address translation",
+    "iptables",
+    "ipset",
+    "conntrack",
+    "firewall",
+    "masquerade",
+    "masquerading",
+    "policy",
+    "mangle",
+    "mangling"
+  ],
+  "dependencies": {
+    "async": "*"
+  },
+  "engines"     : {
+    "node": ">=0.8.0"
+  },
+  "homepage"    : "https://github.com/diosney/node-netfilter",
+  "bugs"        : {
+    "url": "https://github.com/diosney/node-netfilter/issues"
+  },
+  "author"      : {
+    "name" : "Diosney Sarmiento",
+    "email": "diosney.s@gmail.com"
+  },
+  "license"     : "MIT",
+  "repository"  : {
+    "type": "git",
+    "url" : "https://github.com/diosney/node-netfilter.git"
+  }
 }
