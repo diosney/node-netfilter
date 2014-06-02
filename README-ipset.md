@@ -7,10 +7,28 @@
 #### Create
 
 	ipset.create({
-		set:  'foo',
-		type: 'bitmap:ip',
+		setname:  'foo',
+		typename: 'bitmap:ip',
 
-		options: {
+		'create-options': {
+			range:  '192.168.0.0/16'
+		}
+	}, function (error) {
+		if (error) {
+			console.log(error);
+		}
+	});
+
+#### Add
+
+	// ipset create foo bitmap:ip range 192.168.0.0/16
+
+	ipset.add({
+		setname:  'foo',
+
+		'add-entry':  '192.168.1/24'
+
+		'add-options': {
 			range:  '192.168.0.0/16'
 		}
 	}, function (error) {
