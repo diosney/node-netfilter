@@ -72,7 +72,7 @@
 
 Destroy all ipsets.
 
-	ipset.destroy(function (error, code) {
+	ipset.destroy(function (error) {
 		if (error) {
 			console.log(error);
 		}
@@ -82,7 +82,7 @@ Destroy ipset with name `foo`.
 
 	ipset.destroy({
 		setname:  'foo'
-	}, function (error, code) {
+	}, function (error) {
 		if (error) {
 			console.log(error);
 		}
@@ -92,7 +92,7 @@ Destroy ipset with name `foo`.
 
 Flush all ipsets.
 
-	ipset.flush(function (error, code) {
+	ipset.flush(function (error) {
 		if (error) {
 			console.log(error);
 		}
@@ -102,7 +102,7 @@ Flush ipset with name `foo`.
 
 	ipset.flush({
 		setname:  'foo'
-	}, function (error, code) {
+	}, function (error) {
 		if (error) {
 			console.log(error);
 		}
@@ -113,7 +113,7 @@ Flush ipset with name `foo`.
 	ipset.rename({
 		'from'  :  'foo',
 		'to'    :  'foo2'
-	}, function (error, code) {
+	}, function (error) {
 		if (error) {
 			console.log(error);
 		}
@@ -124,7 +124,7 @@ Flush ipset with name `foo`.
 	ipset.swap({
 		'from'  :  'foo',
 		'to'    :  'foo2'
-	}, function (error, code) {
+	}, function (error) {
 		if (error) {
 			console.log(error);
 		}
