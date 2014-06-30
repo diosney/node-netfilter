@@ -12,6 +12,7 @@ Wrapper around native **netfilter** suite to port its functionality to be used i
 
 - `iptables`    Administration tool for IPv4 packet filtering and NAT (among other capabilities).
 - `ip6tables`   IPv6 packet filter administration (among other capabilities).
+- `ipsets`      Administration tool for IP sets.
 
 ## Requirements
 
@@ -38,8 +39,8 @@ can easily use the module with basic knowledge.
 
 The specific utilities readme are located at:
 
-- [README-iptables](https://github.com/diosney/node-netfilter/blob/master/README-iptables.md)
-- [README-ipset](https://github.com/diosney/node-netfilter/blob/master/README-ipset.md)
+- [README-iptables](https://github.com/diosney/node-netfilter/blob/master/docs/README-iptables.md)
+- [README-ipset](https://github.com/diosney/node-netfilter/blob/master/docs/README-ipset.md)
 
 ## License
 
