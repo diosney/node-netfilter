@@ -20,7 +20,23 @@ Basically the only system requirement is that the **netfilter** framework to be 
 sure is installed by default in Linux based OSes.
 
 Other requirement is about permission levels. To properly execute the provided methods the application that uses the
-module must have the proper `sudo` privileges.
+module must have the proper `sudo` privileges. One way to do it could be by adding a custom user to the system:
+
+`sudo adduser --system --no-create-home netfilter`
+
+then add its permissions at `/etc/sudoers` file:
+
+`netfilter ALL= NOPASSWD: /sbin/iptables, /sbin/ip6tables, /sbin/ipset`
+
+and then execute the commands with `sudo: true`:
+
+	iptables.flush({
+		sudo: true
+	}, function (error) {
+		if (error) {
+			console.log(error);
+		}
+	});
 
 ## Issues
 
