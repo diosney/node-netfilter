@@ -1,9 +1,9 @@
 {
-  "name"        : "netfilter",
-  "version"     : "0.2.3",
-  "description" : "Packet filtering framework. Wrapper to provide netfilter capabilities from Node.js",
-  "main"        : "index.js",
-  "keywords"    : [
+  "name": "netfilter",
+  "version": "0.2.3",
+  "description": "Packet filtering framework. Wrapper to provide netfilter capabilities from Node.js",
+  "main": "index.js",
+  "keywords": [
     "stateless",
     "stateful",
     "packet",
@@ -28,22 +28,28 @@
     "set"
   ],
   "dependencies": {
-    "async": "*"
+    "async": "~0.9.0",
+    "offspring": "~1.0.0",
+    "process-queue": "^1.0.1",
+    "shell-quote": "^1.4.2"
   },
-  "engines"     : {
+  "engines": {
     "node": ">=0.8.0"
   },
-  "homepage"    : "https://github.com/diosney/node-netfilter",
-  "bugs"        : {
+  "homepage": "https://github.com/diosney/node-netfilter",
+  "bugs": {
     "url": "https://github.com/diosney/node-netfilter/issues"
   },
-  "author"      : {
-    "name" : "Diosney Sarmiento",
+  "author": {
+    "name": "Diosney Sarmiento",
     "email": "diosney.s@gmail.com"
   },
-  "license"     : "MIT",
-  "repository"  : {
+  "license": "MIT",
+  "repository": {
     "type": "git",
-    "url" : "https://github.com/diosney/node-netfilter.git"
+    "url": "https://github.com/diosney/node-netfilter.git"
+  },
+  "scripts": {
+    "test": "node test/*.js"
   }
 }
