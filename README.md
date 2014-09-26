@@ -58,6 +58,39 @@ The specific utilities readme are located at:
 - [README-iptables](https://github.com/diosney/node-netfilter/blob/master/docs/README-iptables.md)
 - [README-ipset](https://github.com/diosney/node-netfilter/blob/master/docs/README-ipset.md)
 
+## Concurrent commands
+
+The **netfilter** suite sets a lock when a write operation is already in process, so concurrent
+operations will fail if they hit the lock. To overcome this, a queueing system was implemented with
+a default concurrency of one command at a time. If you ever needs to change the queue options or
+increase the concurrent commands, you can add an `options.queue` parameter to the hash passed to the
+command, like:
+
+	iptables.new({
+		queue: custom_queue,
+
+		table: 'filter', // default: filter
+		chain: 'new-user-chain',
+	}, function (error) {
+		if (error) {
+			console.log(error);
+		}
+	});
+
+This `custom_queue` must be a valid [process-queue](https://www.npmjs.org/package/process-queue) queue.
+
+## Tests
+
+To run the tests just execute:
+
+	make test
+
+and they will run.
+
+**Important: ** Some of the commands are destructive, like `flush` and `delete`, and since some tests
+will try to clear all rules and/or chains, you hace to be careful to not have important custom
+rules and/or chains in the testing system if you don't want them to be removed.
+
 ## License
 
 The MIT License (MIT)
