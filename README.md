@@ -91,6 +91,10 @@ and they will run.
 will try to clear all rules and/or chains, you hace to be careful to not have important custom
 rules and/or chains in the testing system if you don't want them to be removed.
 
+## Contributing
+
+Just maintain the overall code style and add or change the respective tests.
+
 ## License
 
 The MIT License (MIT)
