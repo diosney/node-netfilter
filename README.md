@@ -85,7 +85,7 @@ To run the tests just execute:
 
 	make test
 
-and they will run.
+and they will run. Note that you will somehow execute the commands with `sudo` privileges.
 
 **Important:** Some of the commands are destructive, like `flush` and `delete`, and since some tests
 will try to clear all rules and/or chains, you hace to be careful to not have important custom

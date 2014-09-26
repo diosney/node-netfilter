@@ -132,6 +132,10 @@ The wrapper error codes matches (unsurprisingly) the same as iptables. They are:
 				'cluster-total-nodes': 2,
 				'cluster-local-node':  1,
 				'cluster-hash-seed':   '0xdeadbeef'
+			},
+			
+			comment: {
+				comment: '"Some comment."'
 			}
 		},
 
@@ -235,11 +239,34 @@ The wrapper error codes matches (unsurprisingly) the same as iptables. They are:
 		}
 
 		for (var table_name in dump) {
-			var table_dump = dump[table];
+			var table_dump = dump[table_name];
 
 			for (var chain_name in table_dump.chains) {
 				var chain_dump = table_dump.chains[chain_name];
 				console.log(table_name, chain_name, chain_dump);
 			}
+		}
+	});
+
+#### Check
+
+	iptables.check({
+		table: 'filter', // default: filter
+		chain: 'chain-name',
+
+		protocol:		'tcp',
+		source:		  '10.10.10.0/24',
+		destination:	 '11.11.11.0/24',
+
+		matches: {
+			comment: {
+				comment: '"Some comment."'
+			}
+		},
+
+		jump: 'DROP'
+	}, function (error) {
+		if (!error) {
+			console.log('The rule exists in the chain.');
 		}
 	});
