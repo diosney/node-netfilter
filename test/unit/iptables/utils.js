@@ -3,13 +3,13 @@ var should = require('should');
 var utils = require('../../../lib/iptables/utils');
 var fixtures = require('./fixtures/utils.processCommonRuleSpecs');
 
-describe('iptables', function () {
+module.exports = function () {
   describe('#utils', function () {
     it('should be defined', function () {
       should.exist(utils);
     });
 
-    describe('#tables{}', function () {
+    describe('#tables', function () {
       it('should be defined', function () {
         should.exist(utils.tables);
       });
@@ -26,7 +26,7 @@ describe('iptables', function () {
       });
     });
 
-    describe('#processCommonRuleSpecs()', function () {
+    describe('#processCommonRuleSpecs', function () {
       it('should be defined', function () {
         should.exist(utils.processCommonRuleSpecs);
       });
@@ -44,4 +44,4 @@ describe('iptables', function () {
       });
     });
   });
-});
+};
