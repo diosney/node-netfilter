@@ -87,7 +87,7 @@ To run the tests just execute:
 
 and they will run.
 
-**Important: ** Some of the commands are destructive, like `flush` and `delete`, and since some tests
+**Important:** Some of the commands are destructive, like `flush` and `delete`, and since some tests
 will try to clear all rules and/or chains, you hace to be careful to not have important custom
 rules and/or chains in the testing system if you don't want them to be removed.
 
