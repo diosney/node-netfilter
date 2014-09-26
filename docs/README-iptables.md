@@ -226,14 +226,20 @@ The wrapper error codes matches (unsurprisingly) the same as iptables. They are:
 
 #### Dump
 
-       iptables.dump({
-         table: 'nat', // default: null == all
-       }, function(err, dump) {
-         for (var table_name in dump) {
-           var table_dump = dump[table];
-           for (var chain_name in table_dump.chains) {
-             var chain_dump = table_dump.chains[chain_name];
-             console.log(table_name, chain_name, chain_dump);
-           }   
-         }
-       });
+	iptables.dump({
+		 table: 'nat', // default: null == all
+	}, function(error, dump) {
+		if (error) {
+			console.log(error);
+			return;
+		}
+
+		for (var table_name in dump) {
+			var table_dump = dump[table];
+
+			for (var chain_name in table_dump.chains) {
+				var chain_dump = table_dump.chains[chain_name];
+				console.log(table_name, chain_name, chain_dump);
+			}
+		}
+	});
