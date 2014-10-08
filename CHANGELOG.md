@@ -1,5 +1,11 @@
 ## Release notes
 
+### 0.3.1
+
+- (@bmeck) Changed all `hasOwnProperty` instances to use the module `has`.
+
+- Fixed test runner. Now properly runs when called from `npm test`.
+
 ### 0.3.0
 
 - (@bmeck) Added support for `iptables.dump` command.
