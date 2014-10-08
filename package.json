@@ -54,6 +54,6 @@
     "url": "https://github.com/diosney/node-netfilter.git"
   },
   "scripts": {
-    "test": "mocha test/unit/*.js"
+    "test": "mocha --recursive --timeout 5000 --reporter spec test/"
   }
 }
