@@ -26,7 +26,7 @@ module must have the proper `sudo` privileges. One way to do it could be by addi
 
 then add its permissions at `/etc/sudoers` file:
 
-`netfilter ALL= NOPASSWD: /sbin/iptables, /sbin/ip6tables, /sbin/ipset`
+`netfilter ALL=NOPASSWD: /sbin/iptables, /sbin/ip6tables, /sbin/ipset`
 
 and then execute the commands with `sudo: true`:
 
