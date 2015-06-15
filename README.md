@@ -2,7 +2,7 @@
 
 Packet filtering framework.
 
-Wrapper around native **netfilter** suite to port its functionality to be used in Node.js space.
+Wrapper around native **netfilter** suite to port its functionality to be used in the Node.js space.
 
 ## Installation
 
@@ -16,7 +16,7 @@ Wrapper around native **netfilter** suite to port its functionality to be used i
 
 ## Requirements
 
-Basically the only system requirement is that the **netfilter** framework to be present in your system, which is almost
+Basically the only system requirement is that the **netfilter** framework have to be present in your system, which almost
 sure is installed by default in Linux based OSes.
 
 Other requirement is about permission levels. To properly execute the provided methods the application that uses the
@@ -85,10 +85,10 @@ To run the tests just execute:
 
 	make test
 
-and they will run. Note that you will somehow execute the commands with `sudo` privileges.
+and they will run. Note that you have to somehow execute the commands with `sudo` privileges.
 
 **Important:** Some of the commands are destructive, like `flush` and `delete`, and since some tests
-will try to clear all rules and/or chains, you hace to be careful to not have important custom
+will try to clear all rules and/or chains, you have to be careful to not have important custom
 rules and/or chains in the testing system if you don't want them to be removed.
 
 ## Contributing
@@ -99,7 +99,7 @@ Just maintain the overall code style and add or change the respective tests.
 
 The MIT License (MIT)
 
-Copyright (c) 2013-2014 Diosney Sarmiento
+Copyright (c) 2013-2015 Diosney Sarmiento
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
