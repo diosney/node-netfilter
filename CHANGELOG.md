@@ -1,5 +1,9 @@
 ## Release notes
 
+### 0.3.3
+
+- (@derfel) Added support for source and destination ports.
+
 ### 0.3.2
 
 - Fixed typo in docs.
