@@ -1,5 +1,10 @@
 ## Release notes
 
+### 0.3.2
+
+- Fixed typo in docs.
+- Removed year in license.
+
 ### 0.3.1
 
 - (@bmeck) Changed all `hasOwnProperty` instances to use the module `has`.
